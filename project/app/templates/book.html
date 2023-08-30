@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>site</title>
+</head>
+<body>
+    <a href="{% url 'filtration' 'date' %}">year + month</a>
+    <a href="{% url 'filtration' 'year' %}">year</a>
+    <br><br><br>
+
+    {% for book in dct %}
+        <a href="{% url 'information' book.pk %}">{{book.name}} - {{book.date}}</a>
+        <br>
+    {% endfor %}
+</body>
+</html>
